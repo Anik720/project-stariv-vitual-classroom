@@ -109,3 +109,5 @@ submit answers: https://virtual-classroom-appp.herokuapp.com/api/v1/student/6268
 
 
 Curated result:  https://virtual-classroom-appp.herokuapp.com/api/v1/student/62687e1040a0760016187892/curated for getting the curated result student need to give a get request to this url.
+
+cron/scheduler to notify students: This part is implemented at app.js file
