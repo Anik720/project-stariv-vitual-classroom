@@ -15,15 +15,15 @@ After login a token will be generated which you can see in the response and that
 
 2) create teacher: https://virtual-classroom-appp.herokuapp.com/api/v1/teacher       in this url admin can create a teacher which will be a post request in postman. How to create a teacher a demo is shown below :
 
-"name":"Harun",
-"email":"harun@gmail.com",
+"name":"Kadir",
+"email":"kadir@gmail.com",
 "role":"teacher"
 
 After creating a teacher a auto generated code willbe saved into the code field in the model and this will be emailed to the teacher. 
 In the same url by get request admin can see all the teacher.
 3) teacher login: https://virtual-classroom-appp.herokuapp.com/api/v1/users/login in this url a teacher have to login which will be a post request in postman. The way he need to put the credentials is shown below:
 
-"email":"harun@gmail.com",
+"email":"kadir@gmail.com",
 "password":"ToI(QJjsnSegZ"
 
 In the password field he need to put the code which was emailed him
@@ -89,8 +89,8 @@ Now when a teacher Gives a get  request of the he can see the result of that par
 7) Student Login: https://virtual-classroom-appp.herokuapp.com/api/v1/users/signup in this url a student have to signup for enrolled in a class. The data which he need to provide is shown below: 
 
   "code":"vw(F7!%fAdbRg",
-  "name":"Jaman",
-  "email":"jaman@gmail.com",
+  "name":"Shohan",
+  "email":"shohan@gmail.com",
   "schoolId":"12",
   "password":"12345678",
   "enrollclass":["626869c840a0760016187703"]
