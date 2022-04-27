@@ -1,8 +1,15 @@
+#  To run this project 1st install all the dependencies and then run the command npm run start  (Note: you need to have nodemon installed)
+
+
 1)Admin Login:  https://virtual-classroom-appp.herokuapp.com/api/v1/users/login        in this url a user have to login which will be a post request in postman……
 
 For admin login the credentials is: 
-"email":"azizul.tareq@northsouth.eduu",
+"email":"kibria@gmail.com",
 "password":"12345678"
+
+
+
+
 
 After login a token will be generated which you can see in the response and that token you have to set in header as a key value pair. Key will be Authorization and value will Bearer token(which come into the response) 
 

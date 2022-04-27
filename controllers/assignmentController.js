@@ -1,20 +1,15 @@
-const Assignment =require('../models/assignmentModel')
+const Assignment = require('../models/assignmentModel');
 const AppError = require('./../utils/appError');
-const Email = require('./../utils/email');
-
 
 exports.createAssignment = async (req, res, next) => {
   const newAssignment = await Assignment.create(req.body);
-  // const url = `${req.protocol}://${req.get('host')}/api/v1/class`;
-  // console.log(url);
-  //await new Email(newTeacher, url).sendWelcome();
+
   res.status(201).json({
     status: 'success',
     data: {
-      assignment: newAssignment
-    }
+      assignment: newAssignment,
+    },
   });
-  
 };
 
 exports.getAssignment = async (req, res, next) => {

@@ -1,4 +1,4 @@
-const Student =require('../models/studentModel')
+const Student = require('../models/studentModel');
 const Assignment = require('../models/assignmentModel');
 const Exam = require('../models/examModel');
 const Classroom = require('./../models/classroomModel');
@@ -64,9 +64,6 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
 
 exports.createStudent = async (req, res, next) => {
   const newStudent = await Student.create(req.body);
-  // const url = `${req.protocol}://${req.get('host')}/api/v1/class`;
-  // console.log(url);
-  //await new Email(newTeacher, url).sendWelcome();
 
   res.status(201).json({
     status: 'success',

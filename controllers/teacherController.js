@@ -1,4 +1,4 @@
-const Teacher =require('../models/teacherModel')
+const Teacher = require('../models/teacherModel');
 const AppError = require('./../utils/appError');
 const Email = require('./../utils/email');
 exports.createTeacher = async (req, res, next) => {
@@ -10,7 +10,7 @@ exports.createTeacher = async (req, res, next) => {
   });
   const url = `${req.protocol}://${req.get('host')}/api/v1/teacher`;
   console.log(url);
-  //await new Email(newTeacher, url).sendWelcome();
+  await new Email(newTeacher, url).sendWelcome();
   res.status(201).json({
     status: 'success',
     data: {
@@ -34,7 +34,6 @@ exports.getAllTeacher = async (req, res, next) => {
 exports.getTeacher = async (req, res, next) => {
   const teacher = await Teacher.findById(req.params.id);
 
-
   if (!teacher) {
     return next(new AppError('No teacher found with that ID', 404));
   }
@@ -42,15 +41,15 @@ exports.getTeacher = async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      teacher
-    }
+      teacher,
+    },
   });
 };
 
 exports.updateTeacher = async (req, res, next) => {
   const teacher = await Teacher.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   if (!teacher) {
@@ -60,8 +59,8 @@ exports.updateTeacher = async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     data: {
-      teacher
-    }
+      teacher,
+    },
   });
 };
 
@@ -74,6 +73,6 @@ exports.deleteTeacher = async (req, res, next) => {
 
   res.status(204).json({
     status: 'success',
-    data: null
+    data: null,
   });
 };

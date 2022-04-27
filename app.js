@@ -25,15 +25,15 @@ cron.schedule('* * * * *', async () => {
     c = x.enrollclass[0]?.assignment[0]?.lastSubmitTime;
     const month = b?.slice(3, 5);
     const day = b?.slice(0, 2);
-    const minutes = c?.slice(3);
+
     //  const minutes = userInput.slice(3);
     //  const minutes = userInput.slice(3);
     //console.log(x.email);
     // console.log('From c' + c);
     schedule.scheduleJob(`* * ${day} ${month} *`, async function () {
       const url = `http://localhost:3000/api/v1/`;
-      // console.log(url);
-      //await new Email(x, url).sendWelcome();
+       console.log(url);
+       await new Email(x, url).sendWelcome();
     });
   });
 });
