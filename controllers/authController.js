@@ -40,7 +40,12 @@ const createSendToken = (user, statusCode, res) => {
 };
 
 exports.signup = catchAsync(async (req, res, next) => {
-  const newUser = await Student.create(req.body);
+ let newUser;
+  if (req.body.code) {
+    newUser = await Student.create(req.body);
+  } else {
+    newUser = await User.create(req.body);
+  }
   // name: req.body.name,
   // email: req.body.email,
   // password: req.body.password,
