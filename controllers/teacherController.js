@@ -5,7 +5,7 @@ exports.createTeacher = async (req, res, next) => {
   const newTeacher = await Teacher.create({
     name: req.body.name,
     email: req.body.email,
-
+     code: req.body.code,
     role: req.body.role,
   });
   const url = `${req.protocol}://${req.get('host')}/api/v1/teacher`;
